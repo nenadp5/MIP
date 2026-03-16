@@ -11,6 +11,6 @@ konvBINtoSEG:
 	movc A,@A+PC ;pristupamo tabeli uz pomoc PC registra 
 	ret ;naredba za povratak u glavni program
 	
-TABLE: DB 7Eh,30h,6Dh,79h,33h,5Bh,5Fh,70h,7Fh,73h ;drugaciji nacin zapisa lookup tabele
+TABLE: DB 7Eh,30h,6Dh,79h,33h,5Bh,5Fh,70h,7Fh,73h ;drugaciji nacin zapisa lookup tabele za zajednicku katodu
 
 END ;kraj glavnog programa
