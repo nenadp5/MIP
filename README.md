@@ -1,0 +1,2 @@
+# MIP
+Mikrokontroleri i programiranje
