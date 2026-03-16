@@ -1,0 +1,40 @@
+00. Napisati program (potprogram, rutinu) na asemblerskom jeziku A51 kojim se realizuje konverzija binarnog broja smeštenog u akumulator u odgovarajući sedmosegmentni cifarski kod korišćenjem look – up tabele.
+
+01. Napisati potprogram na A51 asemblerskom jeziku koji vrši konverziju binarnog broja (0–9) smeštenog u akumulator u sedmosegmentni kod korišćenjem look-up tabele. Pristup tabeli mora se realizovati korišćenjem PC registra (program counter).​
+
+02. Napisati program (potprogram, rutinu) na asemblerskom jeziku A51 za konverziju 8 – bitnog binarnog broja smeštenog u akumulator, u trocifreni BCD broj i smestiti ga u memoriju u tzv. pakovanom BCD formatu. Cifru stotine smestiti na adresu STOT, a cifru desetice i cifru jedinice smestiti na adresu DESJED.​
+
+DOMAĆI ZADATAK 01: Napisati program (potprogram, rutinu) na asemblerskom jeziku A51 kojim se realizuje konverzija binarnog broja smeštenog u akumulator u odgovarajući sedmosegmentni cifarski kod korišćenjem look – up tabele.​
+Sedmosegmentni displej je realizovan sa zajedničkom anodom.​ Samostalno odlučite koji način želite da korsitite.
+
+DOMAĆI ZADATAK 02: Napisati program (potprogram, rutinu) na asemblerskom jeziku A51 koji će izvršiti konverziju 8-bitnog binarnog broja smeštenog u akumulator u trocifreni BCD broj i smestiti ga u memoriju u tzv. pakovanom BCD formatu. Takođe, potrebno je ispisati cifre na sedmosegmentni displej (zajednička katoda) povezan na port P0.​
+Cifru stotine treba smestiti na memorijsku adresu STOT, dok cifre desetice i jedinice treba smestiti u pakovanom formatu na memorijsku adresu DESJED.​
+Prvo ispisati cifru stotina, zatim cifru desetica, i na kraju cifru jedinica.
+
+03. Napisati program (potprogram, rutinu) na asemblerskom jeziku A51 koji konvertuje niz od 5 BCD cifara u ASCII kod koristeći osobinu ASCII prezentacije cifara od 0 do 9. Prenos parametara se vrši preko niza, a nizu se obraćamo registarski indirektnim načinom adresiranja sa početnom adresom smeštenom u registar R1.​
+
+04. Napisati program (potprogram, rutinu) na asemblerskom jeziku A51 za nalaženje proizvoda dveju BCD cifara smeštenih u akumulator (pakovani BCD). Prenos parametara se vrši putem akumulatora. Rezultat prikazati kao BCD broj takođe u pakovanom formatu i putem akumulatora ga preneti programu koji poziva navedenu rutinu. Prenos (vraćanje) rezultata realizovati putem akumulatora.​
+
+DOMAĆI ZADATAK 03: Napisati potprogram na asemblerskom jeziku A51 za konverziju niza od 7 ASCII kodova velikih slova u ASCII kodove malih slova. Prenos parametara se vrši preko niza, a nizu se obraćamo registarsko indirektnim načinom adresiranja sa početnom adresom niza smeštenom u registar R0. Mala slova treba smestiti u poseban bafer.​
+
+DOMAĆI ZADATAK 04: Napisati potprogram na asemblerskom jeziku A51 koji konvertuje niz od 8 BCD cifara u ASCII kod, koristeći osobinu ASCII reprezentacije cifara od 0 do 9. Prenos parametara vrši se preko niza, pri čemu se nizu pristupa registarski indirektnim načinom adresiranja, sa početnom adresom smeštenom u registru R1. Pre konverzije, svaku cifru potrebno je prikazati na sedmosegmentnom displeju sa zajedničkom katodom koji je povezan na port P0. Konvertovane vrednosti treba smestiti u poseban bafer.​
+
+DOMAĆI ZADATAK 05: Napisati potprogram na asemblerskom jeziku A51 koji pronalazi proizvod dveju BCD cifara koje su smeštene u pakovanom formatu, pri čemu se registri u kojima se nalaze pakovane cifre nalaze u nizu podataka. Niz sadrži 5 registara, a svaka dva pakovana BCD broja (po dve cifre u jednom registru) treba uzeti iz niza i izračunati njihov proizvod. Prenos parametara vrši se preko niza, a nizu se pristupa registarski indirektnim načinom adresiranja, sa početnom adresom smeštenom u registar R1. Pre izvođenja operacije množenja, potrebno je svaku BCD cifru ispisati na sedmosegmentnom displeju sa zajedničkom katodom koji je povezan na port P0. Nakon što se izračuna proizvod, rezultat treba vratiti u BCD formatu (pakovanom) putem novog niza, nazad programu koji poziva ovu rutinu.​
+
+05. Napisati program (potprogram, rutinu) na asemblerskom jeziku A51 za konverziju hex vrednosti koja se nalazi na adresi PARAM u ASCII kod. Promenljiva PARAM se nalazi u memoriji za podatke (direktno adresibilna), a u proceduru za konverziju se prenosi preko STACK-a.​
+
+06. Projektovati sistem (nacrtati šemu i napisati program na asemblerskom jeziku A51) za kontrolu peći koristeći uslužno prekidne rutine (ISR) za obradu prekida tipa spoljašnji (eksterni) prekidi. Kontrola peći se ostvaruje praćenjem temperature u opsegu (20 +- 1) stepeni putem senzora koji generišu odgovarajuće okidačke (trigger) impulse kada dođe do detektovanja definisanih limita vrednosti (minimalna 19 stepeni i maksimalna vrednost 21 stepen)
+
+07. Napisati program na asemblerskom jeziku A51 za analizu tastature veličine 8 * 8 tastera pomoću mikrokontrolera uz pamćenje prethodno i tekuće očitanog stanja u unutrašnjoj memoriji za podatke. To podrazumeva da su nam neophodna dva bloka podataka od po 8 B (dva bafera). Jedan za prethodno očitanu vrednost i jedan za tekuće očitanu vrednost.
+
+08. Projektovati hardver (nacrtati šemu) i napisati program na asemblerskom jeziku A51 kojim se vrši serijsko očitavanje 12-to bitnog podatka sa analognog digitalnog konvertora ADS 7816 koristeci mikrokontroler 8051.
+
+09. Napisati program na asemblerskom jeziku A51 za mikrokontroler uC8051 kojim se kreira primopredajni bafer od po 64B u opštem slučaju (64B za prijem i 64B za predaju). Predajni bafer sadrži podatke za slanje putem serijskog porta (UART), a prijemni bafer se puni podacima koje mikrokontroler prima putem serijskog porta (UART). Program realizovati kao uslužno prekidnu rutinu (ISR). Napomena, inicijalizacija serijskog porta nije deo programa tj. realizovana je u drugom modulu!!!!!
+
+10.​ Napisati program na asemblerskom jeziku A51 koji kreira pravougaoni talasni oblik na pinu P1.0. Frekvenciju pravougaonog talasnog oblika od 1 KHz realizovati korišćenjem tajmera TO. (Napomena: faktor ispune je 50% - duty cycling). Frekvencija kristala je 11 059 200 HZ = 11,0592 MHz. Napomena: generisati pravougaoni talasni oblik prozivkom (bez ISR).
+
+11. Napisati program na asemblerskom jeziku A51 koji kreira pravougaoni talasni oblik na pinu P1.0. Frekvenciju pravougaonog talasnog oblika od 10 KHz realizovati korišćenjem tajmera T0. (Napomena: faktor ispune je 50% - duty cycling). Frekvencija kristala je 12 000 000 HZ = 12 MHz.​
+
+12. Napisati sekvencu instrukcija kojom inicijalizujemo serijski port da radi u 8-bitnom režimu rada UART-a na bitskoj brzini od 2400 bps. Pretpostavimo da se mikrokontroler 8051 taktuje kristalom frekvencije 12 MHz, a da se takt bitske brzine generiše korišćenjem tajmera T1.​
+
+13. Napisati sekvencu instrukcija kojom inicijalizujemo serijski port da radi u 8-bitnom režimu rada UART-a na bitskoj brzini od 9600 bps. Pretpostavimo da se mikrokontroler 8051 taktuje kristalom frekvencije 11,0592 MHz, a da se takt bitske brzine generiše korišćenjem tajmera T1.​
