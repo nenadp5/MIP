@@ -11,7 +11,7 @@ konvBINtoSEG:
 	movc A,@A+DPTR ;koristimo "movc" jer nam je lookup tabela smestena u ROM memoriji, takodje se obavlja indeksno adresiranje
 	ret ;obavezan deo za povratak u glavni program
 	
-TABLE: ;lookup tabela koja omogucava normalan rad sedmosegmentnog displeja
+TABLE: ;lookup tabela za zajednicku katodu koja omogucava normalan rad sedmosegmentnog displeja
 	DB 7Eh
 	DB 30h
 	DB 6Dh
