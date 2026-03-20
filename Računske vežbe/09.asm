@@ -3,7 +3,7 @@
 
 ;Ako je F=11059200Hz, onda je Fmc=F/12=921600Hz, dok je Tmc=1/Fmc=1,085*10^-6
 ;Frekvencija pravougaonog talasnog oblika je 1000Hz, odnosno Tto=1/1000=1*10^-3 i onda jedan blok iznosi 500*10^-6
-;Konacnu vrednost takta dobijamo kada vrednost bloka podelimo sa Tmc odnsono 500*10^-6/1.085*10^-6=460.829=461
+;Konacnu vrednost takta dobijamo kada vrednost bloka podelimo sa Tmc odnosno 500*10^-6/1.085*10^-6=460.829=461
 ;Medjutim kako imamo kasnjenje i faktore na koje ne mozemo da uticemo onda cemo koristiti vrednost -444
 
 ;Za podesavanje rada tajmera u odgovarajucem rezimu koristimo registar TMOD, a za njegovu kontrolu i proveru koristimo bitove iz TCON. Registri su opisani u posebnom fajlu.
