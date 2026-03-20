@@ -3,7 +3,7 @@
 
 ;Ako je F=12MHz, onda je Fmc=F/12=1000000Hz, dok je Tmc=1/Fmc=1*10^-6
 ;Frekvencija pravougaonog talasnog oblika je 10kHz, odnosno Tto=1/10000=100*10^-6 i onda jedan blok iznosi 50*10^-6
-;Konacnu vrednost takta dobijamo kada vrednost bloka podelimo sa Tmc odnsono 50*10^-6/1*10^-6=50
+;Konacnu vrednost takta dobijamo kada vrednost bloka podelimo sa Tmc odnosno 50*10^-6/1*10^-6=50
 
 ;Tajmer inicijalizujemo kao 8-bitni u autoreload rezimu za tajmer 0, sto znaci da u TMOD upisujemmo 00000010B ili #02h
 ;Realizovacemo putem prekida tako da je u okviru IE registra neophodno da dozvolimo opsti prekid EA i T0 prekid za tajmer, pa onda upisujemo 10000010 ili #82h
