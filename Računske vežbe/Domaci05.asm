@@ -18,7 +18,7 @@ PROIZVOD:
 	mov DPTR,#TABLE ;tabelu vezujemo za registar DPTR
 petlja:
 	mov A,@R1 ;ucitavamo podatak iz izvorisnog niza
-	mov B,#10H ;u registar B smestamo 10h odnosto 16
+	mov B,#10H ;u registar B smestamo 10h odnosno 16
 	div AB ;delimo A i B kako bi dobili cifre
 	mov R2,A ;u R2 smestamo prvu cifru kako je ne bi kasnije prilikom prikaza na displeju izgubili
 	call display ;pozivamo metodu za prikaz na sedmosegmentni dislej
