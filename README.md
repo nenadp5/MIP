@@ -7,6 +7,6 @@ Kada u zadataku vidite parametre kao što su A, B, DPRT, PC, R0, R1... u pitanju
 Isto važi i kada vaš kompajler ne prepoznaje komande kao što su MOVC, SWAP i slične, jer su to delovi asemblera A51 koji se minimalno razlikuje u odnosu na standardni asembler. 
 
 * U okviru fajla "Računske vežbe" imate prisutne sve zadatke zajedno sa dodatnim objašnjenjem za skoro svaku liniju koda. Pored klasičnih zadataka sa računskih vežbi, imate odradjene i domaće zadatke.
-* U okviru fajla "Blanketi" nalaze se nekoliko zadataka sa blanketa za prvi i drugi kolokvijum, svaka linija koja je dodatno objašnjena.
+* U okviru fajla "Blanketi" nalaze se nekoliko zadataka sa blanketa za prvi i drugi kolokvijum, svaka linija koja je dodatno objašnjena. Uglavnom su izvučeni zadaci koji su novi, i nisu se toliko padali, što se tiče ostalih zadataka, u većini slučajeva se ponavljaju oni sa računskih vežbi.
 
 Ukoliko pronadjete bilo kakvu grešku, prijavite kako bi je uklonili!
