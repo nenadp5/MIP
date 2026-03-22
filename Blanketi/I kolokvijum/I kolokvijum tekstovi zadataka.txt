@@ -1,0 +1,57 @@
+
+01. Koristeći logiku spoljašnjih prekida projektovati, na bazi mikrokontrolera 8051, kontroler peći koji održava temperaturu u prostoriji na 20°C ± 3°C. Za ovaj zadatak pretpostaviti sledeći interfejs:
+a) Solenoid putem koga se uključuje/isključuje peć je povezan na pin P1.0 tako da za:
+i. P1.0=1 peć je uključena (solenoid aktivan)
+ii. P1.0=0 peć je isključena (solenoid neaktivan)
+b) Senzori temperature su povezani na pinove spoljašnjeg prekida /INTO (P3.2) i /INTI (P3.3) i obezbeđuju HOT i COLD signale respektivno, tako da je:
+i. HOT = 0, ako je T > 23°C
+ii. COLD = 0, ako je T < 17°C
+Program bi trebao da uključi peć u slučaju da je temperatura T < 17°C i isključi je ako je temperatura T> 23°C.
+Napomena: Inicijalizovati sistem tako da spoljašnji prekid bude aktivan na opadajuću ivicu signala (edge trigger).
+Za svaku liniju koda napisati komentar!
+
+02. Napisati program na asemblerskom jeziku 451 kojim se BCD cifre prikazuju na 7- segmentnom cifarskom displeju. 
+Pretpostavimo da su BCD cifre smeštene akumulator (pakovan BCD). Inicijalizacija prikaza prve cifre ostvaruje se pritiskom na taster T1, a prikaz druge cifre pritiskom na taster T2. 
+Look-up tabeli se pristupa putem DPTR registra. Nakon završetka procesa prikaza cifara iniciranih pritiskom tastera program nema drugih aktivnosti.
+Taster na pinu P1.0 je u konfiguraciji PULL-UP otpornika, dok je taster na pino P1.1 u konfiguraciji PULL-DOWN otpornika.
+
+03. Projektovati i napisati program u asembleru za mikrokontroler 8051 koji automatski reguliše temperaturu u prostoriji na zadatu referentnu vrednost od 20°C ± 3°C koristeći spoljašnje prekide.​
+Opis sistema:​
+Peć se uključuje i isključuje putem solenoida koji je povezan na pin P1.1:​
+P1.1 = 1 → Peć uključena.​
+P1.1 = 0 → Peć isključena.​
+Senzori temperature su povezani na ulaze spoljašnjih prekida:​
+INT0 (/INT0) → COLD signal: COLD = 1 → Temperatura pala ispod 17°C.​
+INT1 (/INT1) → HOT signal: HOT = 1 → Temperatura prešla 23°C.​
+Program treba da uključi peć ako temperatura padne ispod 17°C (aktivira se INT0) i isključi peć ako temperatura pređe 23°C (aktivira se INT1).​
+Oba spoljašnja prekida moraju biti konfigurisana kao aktivni na visokom nivou signala (level triggered, high-level). Prekidu INT1 (HOT) dodeliti najviši prioritet.​
+Napomena:​ Pretpostavlja se da su senzori temperature sposobni da generišu odgovarajuće logičke signale na ulazima prekida.
+
+04. Koristeći logiku spoljašnjih prekida projektovati, na bazi mikrokontrolera 8051, kontroler peći koji održava temperaturu u prostoriji na 20°C ± 3°C. Za ovaj zadatak pretpostaviti sledeći interfejs:+ys
+a) Solenoid putem koga se uključuje/isključuje peć je povezana na pin P1.0 tako da za:
+i. P1.0 = 1 peć je uključena (solenoid aktivan)
+ii. P1.0 = 0 peć je isključena (solenoid neaktivan)
+b) Senzori temperature su povezani na pinove spoljašnjeg prekida /INT0 (P3.2) i /INT1 (P3.3) i obezbeđuju HOT i COLD signale respektivno, tako da je:
+i. HOT = 0, ako je T > 23°C
+ii. COLD = 0, ako je T < 17°C
+Program bi trebao da uključi peć u slučaju da je temperatura T < 17°C i isključi je ako je temperatura T > 23°C.
+Napomena: Inicijalizovati sistem tako da spoljašnji prekid bude aktivan na opadajuću ivicu signala (edge trigger).
+
+05. Napisati program na asemblerskom jeziku A51 kojim se BCD cifre prikazuju na 7-segmentnom cifarskom displeju sa zajedničkom katodom. Pretpostavimo da su BCD cifre smeštene u unutrašnjoj memoriji za podatke (IRAM) na lokacijama 70H i 71H. 
+Lokacijama pristupamo koristeći registarsko indirektni način adresiranja korišćenjem registra R0. Inicijalizacija prikaza prve cifre ostvaruje se pritiskom na tester T1 koji je povezan na pin P1.0, a prikaz druge cifre pritiskom na taster T2 koji je povezan na pin P1.1. 
+Nakon pritiska tastera pozvati potprogram za konverziju BCD cifre u sedmosegmentni kod koji je realizovan korišćenjem look-up tabele i pristupa joj se putem DPTR registra. Dobijeni kod se putem P2 porta šalje na cifarski  displej. 
+Nakon završetka procesa prikaza cifara iniciranih pritiskom tastera program nema druge aktivnosti. 
+Napomena: Sve dok se ne pritisne taster T1(zatim taster T2) program je "zaglavljen", tj. primenjuje se metoda prozivke (pooling)! Taster je aktivan sa nulom. U  procesu izrade zadatka koristite šematski prikaz sistema dat na slici 1.
+
+06. Napisati program na asemblerskom jeziku A51 za jednostavan protiv provalni alarmni sistem. Projekat je realizovan kao četvorozonski alarmni sistem protiv provale kako je to prikazano na slici 1. uz korišćenje odgovarajućih portova 8051 mikrokontrolera.
+Slika 1. prikazuje šemu hardvera za alarmni sistem protiv provale. Port 3 (P3) se koristi kao ulazni port. Na četiri ulazna pina u oznaci P3.0 do P3.3 povezane su zasebne alarmne zone. Jedna zona se sastoji od niza normalno zatvorenih prekidača. 
+Kada se bilo koji od ovih prekidača otvori, što znači da je narušen prostor pod zaštitom, odgovarajući ulazni pin prelazi na visok nivo signal i procesor postaje svestan alarme situacije za odgovarajuću zonu. 
+Preostali pinovi porta P3 se ne koriste i vezani su na masu (GND). Izlaz sistema se sastoji od sedmosegmentnog cifarskog displeja za prikaz rednog broja zone koja je narušena i alarmnog zvona. Alarmno zvono je povezano na pin P1.7 mikrokontrolera i oglašava se kada je ovaj pin postavljen na logički visok nivo signala od strane softvera. 
+Sedmosegmentni displej je povezan na pinove P1.0 do P1.6. Svaki izlazni pin se dovodi do odgovarajućeg segmenta preko neinvertujućeg bafera. Sedmosegmentni displej je sa zajedničkom katodom što znači da se segment pali logičkom jedinicom. Za generisanje sedmosegmentnog koda koristiti look up tabelu kojoj pristupamo pomoću registra DPTR. 
+Za slučaj da je više zona istovremeno aktivirano na displeju će se prikazati slovo C (Combination) čime se iskazuje kombinacija aktiviranih zona.  
+
+07. Napisati program na A51 kojim se realizuje konverzija binarnog broja smestenog u akumulator (prenos parametara se ostvaruje putem akumulatora) u odgovarajuci sedmosegmentni cifarski kod displeja koriscenjem look-up tabele pomocu DPTR registra.
+Sedmosegmentni displej je realizovan sa zajednickom anodom. Napomena: Testiranja radi pretpostaviti da je na pocetku vrednost akumulatora ACC=8 i navesti koja se vrednost ocitava.
+
+08. Napisati program na A51 koji konvertuje niz od 5BCD cifara u ASCII kod koristeci ASCII prezentaciju bitova od 0 do 9. Prenos parametara se vrsi preko niza koji je smesten u unutrasnju memoriju, a nizu se obracamo registarski indirektnim nacinom adresiranja sa pocetnom adresom smestenom u registar R1, dok registar R5 koristimo kao brojacki registar.
+Napomena: Labelu ucinimo globalno vidljivom cime omogucavamo njeno pozivanje iz bilo kog drugog programskog koda.
