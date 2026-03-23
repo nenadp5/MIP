@@ -1,7 +1,7 @@
 ;TEKST ZADATKA: Napisati sekvencu instrukcija kojom inicijalizujemo serijski port da radi u 8-bitnom režimu rada UART-a na bitskoj brzini od 2400 bps. 
 ;Pretpostavimo da se mikrokontroler 8051 taktuje kristalom frekvencije 12 MHz, a da se takt bitske brzine generiše korišćenjem tajmera T1.​
 
-;Prvo moramo da nadjemo TH1 preko fomrule i da proverimo kako ce njegovo zaokruzivanje uticati na Baud Rate, gde odstupanje ne sme biti vece od 2%
+;Prvo moramo da nadjemo TH1 preko formule i da proverimo kako ce njegovo zaokruzivanje uticati na Baud Rate, gde odstupanje ne sme biti vece od 2%
 ;Formula: Baud Rate=(2^smod / 32) * (Fkristala / (12*(256-TH1)) | Baud Rate=dato u tekstu | smod=0 | Fkristala=dato u tekstu | TH1=trazimo i zaokruzujemo na prvi priblizni broj
 ;Ukoliko odstupanje Baud Rate-a bude vece od 2% onda se ne pise program za inicijalizaciju.
 
