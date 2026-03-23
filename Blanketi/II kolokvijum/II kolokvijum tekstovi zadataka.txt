@@ -1,0 +1,36 @@
+01. Opisati periferiju UART (Universal Asynchronous Receiver-Transmitter) kod mikrokontrolera 8051 i objasniti kako se generiše brzina prenosa od 9600 bps za frekvenciju oscilatora Fosc = 11.0592 MHz koristeći tajmer T1 u 8-bitnom auto-reload režimu rada. 
+Dati kod inicijalizacije u asembleru A51 kao potprogram.
+
+02. Napisati program na asemblerskom jeziku A51 koji kontinualno, u beskonačnoj petlji, čita status pina P1.7 i šalje ga na pin P1.0. 
+Istovremeno kreira pravougaoni talasni oblik periode 200μs na pinu P2.5. Pretpostaviti da je frekvencija spoljašnjeg oscilatora 12MHz, a da se za potrebe realizacije talasnog oblika koristi tajmer TO u 8-bitnom auto-reload režimu rada.
+Program realizovati kao jedinstveni programski modul sa uslužno prekidnom rutinom tajmera TO u okviru koje se generiše talasni oblik sa faktorom ispune od 50%.
+
+03. Napisati program na asemblerskom jeziku A51 koji kontinualno, u beskonačnoj petlji, čita status pina P1.7 i šalje ga na pin P1.0. Istovremeno kreira pravougaoni talasni oblik periode 200μs na pinu P2.5 sa faktorom ispune od 25%. 
+Pretpostaviti da je frekvencija spoljašnjeg oscilatora 12MHz, a da se za potrebe realizacije talasnog oblika koristi tajmer T0 u 8-bitnom auto-reload režimu rada. 
+Program realizovati kao jedinstveni programski modul sa uslužno prekidnom rutinom tajmera TO u okviru koje se generiše talasni oblik.
+
+04. Napisati program na A51 koji kreira pravougaoni talasni oblik na pinu P1.0. Frekvenciju pravougaonog talasnog oblika od 1kHz realizovati koriscenjem tajmera T0.
+Frekvencija kristala je 11 059 200Hz. Napomena: Faktor ispune je 50%.
+
+05. Napisati program na asemblerskom jeziku A51 za analizu tastature veličine 8*8 tastera (opšti slučaj) uz pamćenje prethodnog i tekuće očitanog stanja u unutrašnjoj memoriji za podatke.
+Bafere realizovati kao apsolutno definisane segmente u indirektno adresibilnom prostoru podataka tako da OldBar- prethodno očitana vrednost počne od lokacije EOH, a NewBut tekuće očitana vrednost počne od lokacije E8H. 
+U procesu analize tastature primeniti princip šetajuće nule. Nacrtati principijelnu blok semu tastature i mikrokontrolera 8051.
+
+06. Korisnik želi da ugradi alarm u svoj automobli. Projektovati, na bazi mikrokontrolera 8051, deo alarmnog sistema koji ima zadatak da uključi alarmno zvono kada se detektuje pokret pomoću pametnog ultrazvučnog senzora. Izlaz senzora je povezan na pin P1.7 mikrokontrolera 8051 i šalji bit 1 ukoliko je pokret detektovan. 
+Ukoliko se detektuje pokret potrebno je uključiti alarmno zvono koje je povezano na pin P1.0 (uključuje se bitom 1). 
+Istovremeno, u automobilu se nalazi LED koja neprestano treperi (blink - a) čime signalizira da je alarm aktivan (da automobil ima alarmni sistem). Perioda blinkanja LED je 200us sa faktorom ispune od 25% i povezana je na pin P2.5. 
+Pretpostaviti da je frekvencija spoljašnjeg oscilatora 12MHz, a da se za potrebe realizacije treperenja LED (kreiranja talasnog oblika) koristi tajmer TO u 8-bitnom auto-reload režimu rada. 
+Program realizovati kao jedinstveni programski modul sa uslužno prekidnom rutinom tajmera T0 u okviru koje se generiše talasni oblik.
+
+07. Korisnik živi u pametnoj kući i ima problem sa nesanicom, pa želi da mu se u sobi za odmor roletne automatski spuštaju kada padne mrak i podižu kada osvane dan kako bi obezbedio kvalitetniji san. 
+Projektovati kontroler roletni zasnovan na mikrokontroleru 8051, tako da izlaz foto-senzora povezanog na pin P2.0 šalje bit 1 kada količina svetlosti padne ispod praga detekcije, tj. kada padne mrak, a mehanizam podizanja i spuštanja roletni kontroliše se signalom preko pina P1.7 pri čemu bit 0 spušta, a bit 1 podiže roletne.
+Sedmo-segmentni cifarski displej je povezan na port P1 i pri ispisivanju karaktera tačka (DP) ne treba da svetli; ukoliko su roletne spuštene, na displeju se prikazuje karakter,,P" (pm), dok se u slučaju podignutih roletni prikazuje karakter,,A" (am), pri čemu se karakteri prosleđuju putem LOOK-UP tabele kojoj se pristupa preko DPTR registra. 
+Program treba da koristi metodu prozivke (polling), da izvrši jedno očitavanje senzora i postavi odgovarajući izlaz, nakon čega se program,,zaglavljuje" u beskonačnoj petlji. U izradi zadatka koristiti šematski prikaz sedmo-segmentnog displeja sa priložene slike.
+
+08. Projektovati hardver i napisati program na A51 kojim se vrsi inicijalizacija, startovanje i serijsko ocitavanje 12-to bitnog podatka sa analogno-digitalnog konvertora ADS 7816. Napomena: Za potrebe pisanja koda, izgled pinova, algoritam upravljanja i tajming ADC-in definisan je slikama 1 i 2.
+CLK linijom taktujemo ADC koji u skladu sa taktom putem DOUT linije prosledjuje mikrokontroler bit po bit 12-to bitnu konvertovanu vrednost.
+
+09. Napisati kod na asemblerskom jeziku A51 za realizaciju alarmnog sistema u prostoriji. Alarmni sistem je u programu realizovan putem spoljašnjeg prekida koji generiše ton od 400Hz putem zvučnika povezanog na pin P1.7 kad god se pritisne taster T1. 
+Taster T1 je povezan na INTO putem PULL-UP otpornika. Isključenje alarma se ostvaruje od strane ovlašćenog operatera pritiskom na taster "OK" koji je povezan na P1.0. Taster je realizovan putem PULL-DOWN otpornika. Pretpostaviti da je frekvencija spoljašnjeg oscilatora 12 MHz, a da se za potrebe realizacije talasnog oblika koristi tajmer TO. 
+Program realizovati kao jedinstveni programski modul sa uslužno prekidnom rutinom tajmera TO u okviru koje se generiše talasni oblik sa faktorom ispune 50%.
+Napomena: Napisati postupak za dobijanje broja taktova. Inicijalizovati sistem tako da spoljašnji prekid bude aktivan na opadajuću ivicu signala (edge trigger).
